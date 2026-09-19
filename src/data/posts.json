@@ -1,0 +1,19 @@
+{
+  "siteInfo": {
+    "name": "عدسة",
+    "description": "مدونة متخصصة في فن التصوير الفوتوغرافي، نشارك معكم أسرار المحترفين ونصائح عملية لتطوير مهاراتكم.",
+    "social": {
+      "twitter": "https://twitter.com",
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com",
+      "youtube": "https://youtube.com"
+    }
+  },
+  "categories": [
+    { "name": "إضاءة" },
+    { "name": "بورتريه" },
+    { "name": "مناظر طبيعية" },
+    { "name": "تقنيات" }
+  ],
+  "posts": []
+}
