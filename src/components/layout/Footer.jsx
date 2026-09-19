@@ -17,9 +17,55 @@ export default function Footer() {
   return (
     <>
          <footer className="relative overflow-hidden border-t border-white/10 mt-10 bg-[#0b0b0d]">
-      <div className="pointer-events-none absolute -top-40 right-1/4 w-[500px] h-[500px] bg-orange-600/20 rounded-full blur-[130px]"></div>
+      <div className="pointer-events-none absolute inset-x-0 -top-24 h-80 bg-gradient-to-b from-orange-700/20 via-orange-900/10 to-transparent blur-3xl"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-lg brand-gradient flex items-center justify-center text-white font-black">ع</div>
+            <p className="text-white font-extrabold text-lg">{siteData.siteInfo.name}</p>
+          </div>
+          <p className="text-gray-500 text-sm leading-6">{siteData.siteInfo.description}</p>
+          <div className="flex gap-2 mt-5">
+            <a href={siteData.siteInfo.social.twitter} className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 text-gray-400 hover:bg-orange-600 hover:text-white transition">
+               <i className="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href={siteData.siteInfo.social.github} className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 text-gray-400 hover:bg-orange-600 hover:text-white transition">
+                <i className="fa-brands fa-github"></i>
+            </a>
+            <a href={siteData.siteInfo.social.linkedin} className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 text-gray-400 hover:bg-orange-600 hover:text-white transition">
+                <i className="fa-brands fa-linkedin"></i>
+            </a>
+            <a href={siteData.siteInfo.social.youtube} className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 text-gray-400 hover:bg-orange-600 hover:text-white transition">
+              <i className="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 className="flex items-center gap-3 text-white font-bold text-lg mb-5">
+            استكشف
+            <span className="w-10 h-[2px] bg-orange-500"></span>
+          </h4>
+          <ul className="space-y-3 text-sm text-gray-500">
+            <li><Link to="/" className="hover:text-orange-400 transition">الرئيسية</Link></li>
+            <li><Link to="/blog" className="hover:text-orange-400 transition">المدونة</Link></li>
+            <li><Link to="/writers" className="hover:text-orange-400 transition">من نحن</Link></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="flex items-center gap-3 text-white font-bold text-lg mb-5">
+            التصنيفات
+            <span className="w-10 h-[2px] bg-orange-500"></span>
+          </h4>
+          <ul className="space-y-3 text-sm text-gray-500">
+            {siteData.categories.map((cat) => (
+              <li key={cat.name}><Link to="/blog" className="hover:text-orange-400 transition">{cat.name}</Link></li>
+            ))}
+          </ul>
+        </div>
+
         <div>
           <h4 className="flex items-center gap-3 text-white font-bold text-lg mb-5">
             ابق على اطلاع
@@ -43,52 +89,6 @@ export default function Footer() {
               </button>
             </form>
           )}
-        </div>
-
-        <div>
-          <h4 className="flex items-center gap-3 text-white font-bold text-lg mb-5">
-            التصنيفات
-            <span className="w-10 h-[2px] bg-orange-500"></span>
-          </h4>
-          <ul className="space-y-3 text-sm text-gray-500">
-            {siteData.categories.map((cat) => (
-              <li key={cat.name}><Link to="/blog" className="hover:text-orange-400 transition">{cat.name}</Link></li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="flex items-center gap-3 text-white font-bold text-lg mb-5">
-            استكشف
-            <span className="w-10 h-[2px] bg-orange-500"></span>
-          </h4>
-          <ul className="space-y-3 text-sm text-gray-500">
-            <li><Link to="/" className="hover:text-orange-400 transition">الرئيسية</Link></li>
-            <li><Link to="/blog" className="hover:text-orange-400 transition">المدونة</Link></li>
-            <li><Link to="/writers" className="hover:text-orange-400 transition">من نحن</Link></li>
-          </ul>
-        </div>
-
-        <div>
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-lg brand-gradient flex items-center justify-center text-white font-black">ع</div>
-            <p className="text-white font-extrabold text-lg">{siteData.siteInfo.name}</p>
-          </div>
-          <p className="text-gray-500 text-sm leading-6">{siteData.siteInfo.description}</p>
-          <div className="flex gap-2 mt-5">
-            <a href={siteData.siteInfo.social.twitter} className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 text-gray-400 hover:bg-orange-600 hover:text-white transition">
-               <i className="fa-brands fa-x-twitter"></i>
-            </a>
-            <a href={siteData.siteInfo.social.github} className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 text-gray-400 hover:bg-orange-600 hover:text-white transition">
-                <i className="fa-brands fa-github"></i>
-            </a>
-            <a href={siteData.siteInfo.social.linkedin} className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 text-gray-400 hover:bg-orange-600 hover:text-white transition">
-                <i className="fa-brands fa-linkedin"></i>
-            </a>
-            <a href={siteData.siteInfo.social.youtube} className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 text-gray-400 hover:bg-orange-600 hover:text-white transition">
-              <i className="fa-brands fa-youtube"></i>
-            </a>
-          </div>
         </div>
       </div>
 
